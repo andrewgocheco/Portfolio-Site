@@ -1,0 +1,56 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+.projects {
+    position: relative;
+    padding: 0;
+
+    &__content {
+        padding: 1rem 2rem;
+        margin-top: 0;
+
+        p li {
+            font-size: 0.8rem;
+
+            @include media-breakpoint-up(lg){
+                margin-top: 1rem;
+            }
+        }
+
+        @include media-breakpoint-up(lg){
+            margin-top: 1rem;
+        }
+    }
+
+    &__pic {
+        max-width: 1;
+        padding: 0 2rem;
+
+        .learn-more {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+
+            p {
+                text-align: center;
+                color: $white;
+                @include absoluteCenter;
+            }
+        }
+
+        &:hover {
+            @include transitionProperty;
+            opacity: 0.6;
+
+            .learn-more{
+                opacity: 1;
+                visibility: visible;
+                @include transitionProperty;
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+.menu {
+    background-color: rgba($white, 1);
+    padding-top: 2rem 0 2rem 0;
+
+    li {
+        padding: 0 0.7rem;   
+
+        a {
+            color: $primary !important;
+        }
+    }
+}
